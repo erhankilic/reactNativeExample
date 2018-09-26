@@ -1,9 +1,11 @@
 import React from 'react';
-import { Platform, View } from 'react-native';
+import { View } from 'react-native';
 
-const Card = () => {
+const Card = (props) => {
     return (
-        <View></View>
+        <View style={styles.containerStyles}>
+            {props.children}
+        </View>
     );
 };
 
@@ -13,16 +15,14 @@ const styles = {
         borderRadius: 2,
         borderColor: '#ddd',
         borderBottomWidth: 0,
-        ...Platform.select({
-            ios: {
-                shadowColor: '#000',
-                shadowOffset: { width: 0, height: 2 },
-                shadowOpacity: 0.1
-            },
-            android: {
-                elevation: 1
-            }
-        })
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 2,
+        elevation: 1,
+        marginLeft: 5,
+        marginRight: 5,
+        marginTop: 10
     }
 };
 

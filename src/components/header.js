@@ -1,6 +1,6 @@
 // import libraries
 import React from 'react';
-import { Text, View, Platform } from 'react-native';
+import { Text, View } from 'react-native';
 
 // create component
 const Header = (props) => {
@@ -21,16 +21,10 @@ const styles = {
         height: 60,
         paddingTop: 15,
         position: 'relative',
-        ...Platform.select({
-            ios: {
-                shadowColor: '#000',
-                shadowOffset: { width: 0, height: 2 },
-                shadowOpacity: 0.5
-            },
-            android: {
-                elevation: 5
-            }
-        })
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.5,
+        elevation: 5
     },
     textStyle: {
         fontSize: 20
